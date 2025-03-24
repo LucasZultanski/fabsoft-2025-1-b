@@ -13,7 +13,8 @@
    - 🖼 **Novas exposições**  
    - 🎭 **Eventos especiais**  
    - 🎟 **novidades do museu**  
- Garantia de **privacidade dos dados**, conforme as normas de proteção de dados.  
+
+Garantia de **privacidade dos dados**, conforme as normas de proteção de dados.  
 
 ### 📊 Relatórios e Estatísticas (para Administradores)  
 
