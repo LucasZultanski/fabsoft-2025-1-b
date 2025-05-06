@@ -94,3 +94,8 @@ Para realizar análises avançadas e criar relatórios interativos.
 - Deve haver uma funcionalidade para exportar dados de check-ins e cadastros para o Power BI.
 - Os dados exportados devem incluir filtros por período (semana, mês, ano).
 - A exportação deve ser segura e em conformidade com as normas de proteção de dados.
+
+
+Recomendações:
+https://12factor.net/
+https://leanpub.com/dockerparadesenvolvedores
