@@ -1,104 +1,96 @@
-# Fábrica de Software 2025/1
+# Fábrica de Software 2025/1  
 
-## Repositório dos alunos
-- [Repos](https://gist.github.com/d4e37df9f6772173110603fc8bf90b84.git)
+## Nome do Projeto: Totem Museum
 
-## Propostas de projeto
+# Propostas de Projeto:
 
-- Nome do sistema Ex:(Sistema para Mecânica)
-  - Funcionalidade 1
-  - Funcionalidade 2
-  - Funcionalidade 3
+### 📊 Avaliação da Visita  
+- O visitante pode atribuir uma **nota de 0 a 10** para avaliar sua experiência no museu.  
+- Interface intuitiva para facilitar a **avaliação rápida e eficiente**.  
 
-<s>
+### 📍 Check-in do Usuário no Local  
+- O visitante pode realizar um **check-in** ao chegar no museu.  
+- O check-in registra informações como:
+  - **Data e hora da entrada**.
+  - **Usuário associado** (e-mail ou telefone).  
+- O sistema permite monitorar o fluxo de visitantes em tempo real.  
 
-- Nome do sistema Ex:(Sistema para Mecânica)
-  - Funcionalidade 1
-  - Funcionalidade 2
-  - Funcionalidade 3
+### 📩 Cadastro para Notificações  
+O visitante pode informar seu **e-mail e número de telefone** para receber atualizações sobre:  
+   - 🖼 **Novas exposições**  
+   - 🎭 **Eventos especiais**  
+   - 🎟 **Novidades do museu**  
 
-</s>
+Garantia de **privacidade dos dados**, conforme as normas de proteção de dados.  
 
+### 📊 Relatórios e Estatísticas (para Administradores)  
+- **Geração de relatórios:** com estatísticas de check-ins e notificações.  
+- **Listagem de usuários:** cadastrados para notificações.  
+- **Dashboard:** para monitoramento do fluxo de visitantes e engajamento.  
 
-## Livro Eng Software Moderna
-[Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
+# História do Usuário
 
-## Histórias de Usuário
-- Como um Atendente eu gostaria de registrar os dados do cliente como: nome, endereço, telefone, email
-- Como um Atendente eu gostaria de registrar os dados do Carro do cliente como: marca, modelo, placa
-- Como um Atendente eu gostaria de vincular o Carro ao Cliente
-- Como um Atedente eu gostaria de agendar uma revisão com os seguintes dados: cliente, carro, data entrada, data saida, valor da revisão
-- Como um Atendente eu gostaria de vincular peças trocadas na revisão com os seguintes dados: codigo, nome, preço unitário
-- Como um Atendente eu gostaria de vincular os serviços de mão de obra realizados na revisão com os seguintes dados: nome do funcionário, quantidade de horas, valor
+## 1. Avaliação da Visita
 
+**Como visitante do museu,**  
+Quero poder avaliar minha experiência de forma rápida e intuitiva,  
+Para que o museu possa melhorar seus serviços com base no feedback dos visitantes.
 
-## Comandos do Git
+**Critérios de Aceitação:**
+- O sistema deve permitir a seleção de uma nota de 0 a 10.
+- Deve haver um botão de confirmação para enviar a avaliação.
+- Após o envio, uma mensagem de agradecimento deve ser exibida.
 
-### Instalação
-[Git Bash](https://git-scm.com/downloads)
+---
 
-### Configuração inicial
+## 2. Check-in no Local
 
-```
-git config --global user.name "NOME DO USUARIO NO GITHUB"
-git config --global user.email "EMAIL DA CONTA DO GITHUB"
-```
-### Tipos de mensagens do commit
+**Como visitante do museu,**  
+Quero realizar um check-in ao chegar no local,  
+Para registrar minha presença e receber informações personalizadas.
 
-- feat: (new feature for the user, not a new feature for build script)
-- fix: (bug fix for the user, not a fix to a build script)
-- docs: (changes to the documentation)
-- style: (formatting, missing semi colons, etc; no production code change)
-- refactor: (refactoring production code, eg. renaming a variable)
-- test: (adding missing tests, refactoring tests; no production code change)
-- chore: (updating grunt tasks etc; no production code change)
+**Critérios de Aceitação:**
+- O sistema deve permitir o registro do check-in com data e hora.
+- Deve ser possível associar o check-in a um usuário registrado.
+- Após o check-in, o sistema deve exibir uma mensagem de boas-vindas.
 
-### Commit e Push
+---
 
-```
-git add .
-git commit -m "tipo: o que foi feito"
-git push -u origin main
-```
+## 3. Cadastro para Notificações
 
-### Ambiente de desenvolvimento JAVA
-[Eclipse Adoptium](https://adoptium.net/)
-[Microsoft OpenJDK](https://www.microsoft.com/openjdk)
-[AWS CORRETTO](https://aws.amazon.com/pt/corretto/)
-[VSCode](https://code.visualstudio.com/download)
-[Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+**Como visitante interessado nas novidades do museu,**  
+Quero cadastrar meu e-mail e telefone para receber atualizações,  
+Para ficar informado sobre novas exposições, eventos e promoções.
 
+**Critérios de Aceitação:**
+- O formulário deve incluir campos para e-mail e telefone (opcional).
+- Deve haver uma opção para selecionar os tipos de notificações desejadas (exposições, eventos, novidades).
+- O sistema deve exibir uma mensagem de confirmação após o cadastro.
+- Os dados devem ser armazenados em conformidade com a LGPD.
 
-- JRE - Java Runtime Environment
-   - Java Virtual Machine JVM 
-     - java.exe / javaw.exe
-- JDK - Java Development Kit
-  - Compilar o java (javac.exe)
+---
 
-## Diagrama de classes
-![Diagrama](./diagramas/png/classes.png)
+## 4. Visualização de Relatórios (Administrador)
 
+**Como administrador do museu,**  
+Quero acessar relatórios estatísticos sobre os check-ins e cadastros,  
+Para monitorar o fluxo de visitantes e tomar decisões estratégicas.
 
-## Prompts Aula 01/04/2025
-- Encontrar as entidades nas histórias de usuário
-```bash
-@workspace #sym:## Histórias de Usuário quais são as entidades
-```
-- Gerar as classes java das entidades
-```bash
-@workspace por favor, crie as classe em java no pacote entity para representar as entidades
-```
-- Gerar o Diagrama de Classes de Entidade (Domínio)
-```bash
-@workspace por favor gere um diagrama uml no padrão plantuml das classes do pacote br.univille.projfabsoft
-```
-- Instalar a extensão [PlantUML](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
+**Critérios de Aceitação:**
+- O dashboard deve exibir gráficos com o número de check-ins por período.
+- Deve ser possível filtrar os dados por período (semana, mês, ano).
+- A listagem de usuários cadastrados deve incluir e-mail e preferências de notificação.
 
-## Diagrama de classes Entidade (Domínio)
-![Diagrama](./diagramas/png/classes_projfabsoft.png)
+---
 
-## Clean Architecture
+## 5. Exportação de Dados para o Power BI (Administrador)
 
-[Livro Arquitetura Limpa](https://integrada.minhabiblioteca.com.br/reader/books/9788550808161/pageid/0)
+**Como gestor do museu,**  
+Quero exportar os dados diretamente para o Power BI,  
+Para realizar análises avançadas e criar relatórios interativos.
 
-![Arquitetura Limpa](./diagramas/CleanArchitecture.jpg)
+**Critérios de Aceitação:**
+- O sistema deve permitir a integração com o Power BI.
+- Deve haver uma funcionalidade para exportar dados de check-ins e cadastros para o Power BI.
+- Os dados exportados devem incluir filtros por período (semana, mês, ano).
+- A exportação deve ser segura e em conformidade com as normas de proteção de dados.
