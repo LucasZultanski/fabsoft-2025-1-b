@@ -43,3 +43,50 @@ public class AvaliacaoServiceImpl implements AvaliacaoService {
         return null;
     }
 }
+
+package br.univille.projfabsofttotemmuseum.entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.util.List;
+
+@Entity
+public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    @Email(message = "O e-mail deve ser válido")
+    @NotBlank(message = "O e-mail é obrigatório")
+    private String email;
+
+    @Pattern(regexp = "\\d{10,11}", message = "O telefone deve conter 10 ou 11 dígitos")
+    private String telefone; // Opcional
+
+    private boolean notificacoesExposicoes;
+    private boolean notificacoesEventos;
+    private boolean notificacoesNovidades;
+
+    @Min(value = 0, message = "A idade deve ser um número positivo")
+    private Integer idade; // Idade do usuário
+
+    private String genero; // Gênero do usuário (opcional)
+
+    @ManyToMany(mappedBy = "usuariosNotificados")
+    private List<Evento> eventosNotificados;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Avaliacao> avaliacoes;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Checkup> checkups;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Exposicao> exposicoes;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Notificacao> notificacoes;
+
+    // Getters e Setters
+}

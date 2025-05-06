@@ -4,15 +4,16 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-public class Avaliacao {
+public class Checkup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private int nota; // Nota de 0 a 10
+    private LocalDateTime dataHora; // Data e hora do checkup
 
-    private LocalDateTime dataHora; // Data e hora da avaliação
+    @Column(nullable = false)
+    private String local; // Local do checkup
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
@@ -27,20 +28,20 @@ public class Avaliacao {
         this.id = id;
     }
 
-    public int getNota() {
-        return nota;
-    }
-
-    public void setNota(int nota) {
-        this.nota = nota;
-    }
-
     public LocalDateTime getDataHora() {
         return dataHora;
     }
 
     public void setDataHora(LocalDateTime dataHora) {
         this.dataHora = dataHora;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
     }
 
     public Usuario getUsuario() {
