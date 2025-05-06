@@ -20,7 +20,7 @@ public class EventoController {
     @GetMapping
     public ResponseEntity<List<Evento>> getEventos() {
         var listaEventos = eventoService.getAllEventos();
-        return new ResponseEntity<List<Evento>>(listaEventos, HttpStatus.OK);
+        return new ResponseEntity<>(listaEventos, HttpStatus.OK);
     }
 
     @PostMapping
@@ -28,9 +28,9 @@ public class EventoController {
         if (evento == null) {
             return ResponseEntity.badRequest().build();
         }
-        if (evento.getId() == null || evento.getId() == 0) {
+        if (evento.getId() == 0) {
             eventoService.save(evento);
-            return new ResponseEntity<Evento>(evento, HttpStatus.OK);
+            return new ResponseEntity<>(evento, HttpStatus.OK);
         }
         return ResponseEntity.badRequest().build();
     }
@@ -50,7 +50,7 @@ public class EventoController {
         eventoAntigo.setUsuariosNotificados(evento.getUsuariosNotificados());
 
         eventoService.save(eventoAntigo);
-        return new ResponseEntity<Evento>(eventoAntigo, HttpStatus.OK);
+        return new ResponseEntity<>(eventoAntigo, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
@@ -65,6 +65,6 @@ public class EventoController {
         }
         eventoService.delete(id);
 
-        return new ResponseEntity<Evento>(eventoExcluido, HttpStatus.OK);
+        return new ResponseEntity<>(eventoExcluido, HttpStatus.OK);
     }
 }

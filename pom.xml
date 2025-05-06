@@ -10,7 +10,8 @@
     <name>Multi Project: FSO 2025 1 B</name>
 
     <modules>
-        <module>projfabsofttotemmuseum</module>
+        <module>revisao_walter</module>
+        <module>projfabsoft</module>
     </modules>
 
 </project>
