@@ -25,5 +25,6 @@ jobs:
       # Build and push Docker image to GitHub Container Registry
       - name: Build and Push Docker Image
         run: |
-          docker build -t ghcr.io/${{ github.repository | toLower }}/projfabsofttotemmuseum:latest ./projfabsofttotemmuseum
-          docker push ghcr.io/${{ github.repository | toLower }}/projfabsofttotemmuseum:latest
+          REPO_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          docker build -t ghcr.io/$REPO_NAME/projfabsofttotemmuseum:latest ./projfabsofttotemmuseum
+          docker push ghcr.io/$REPO_NAME/projfabsofttotemmuseum:latest
