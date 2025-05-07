@@ -93,4 +93,4 @@ Para realizar análises avançadas e criar relatórios interativos.
 - O sistema deve permitir a integração com o Power BI.
 - Deve haver uma funcionalidade para exportar dados de check-ins e cadastros para o Power BI.
 - Os dados exportados devem incluir filtros por período (semana, mês, ano).
-- A exportação deve ser segura e em conformidade com as normas de proteção de dados.
+- A exportação deve ser segura e em conformidade com as normas de proteção de dados
