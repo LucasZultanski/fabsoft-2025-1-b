@@ -25,5 +25,5 @@ jobs:
       # Build and push Docker image to GitHub Container Registry
       - name: Build and Push Docker Image
         run: |
-          docker build -t ghcr.io/LucasZultanski/projfabsofttotemmuseum:latest ./projfabsofttotemmuseum
-          docker push ghcr.io/LucasZultanski/projfabsofttotemmuseum:latest
+          docker build -t ghcr.io/${{ github.repository }}/projfabsoft:latest ./projfabsoft
+          docker push ghcr.io/${{ github.repository }}/projfabsoft:latest
